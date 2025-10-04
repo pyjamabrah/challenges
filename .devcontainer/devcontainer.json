@@ -25,7 +25,8 @@
         "remote.autoForwardPorts": false,
         "files.exclude": {
            "**/.devcontainer": true,
-           "**/README.md": true
+           "**/README.md": true,
+           "**/.gitignore": true
         },
         "workbench.statusBar.visible": false,
         "workbench.startupEditor": "none",
@@ -39,5 +40,5 @@
 	    ]
     }
   },
-  "postCreateCommand": "pip3 install pygments --break-system-packages && wget -P ~ https://git.io/.gdbinit"
+  "postCreateCommand": "pip3 install pygments pyyaml --break-system-packages && wget -P ~ https://git.io/.gdbinit"
 }

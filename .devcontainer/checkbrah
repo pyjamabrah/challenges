@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+
+import subprocess
+import yaml
+import sys
+
+class tester():
+    def __init__(self, command, testFile, debug):
+        self.command  = command
+        self.testFile = testFile
+        self.debug = debug
+        self.readTests()
+
+        self.passed = 0
+        self.failed = 0
+
+        return
+
+    def readTests(self):
+        with open(self.testFile, 'r') as f:
+            data = yaml.safe_load(f)
+            self.testBank = [(k, v) for k, v in data.items()]
+        self.testCount = len(self.testBank)
+
+    def runTests(self):
+        if self.debug:
+            test_no = 1
+        for test, result in self.testBank:
+            output = subprocess.run(["{0}".format(self.command), "{0}".format(test)], capture_output=True, text=True)
+
+            output = output.stdout.strip()
+            result = str(result)
+
+            if self.debug:
+                print("test #{}".format(test_no))
+                print("input:    {}".format(test))
+                print("expected: {}".format(result))
+                print("output:   {}".format(output))
+                print("")
+
+                test_no = test_no + 1
+
+            if output != result:
+                self.failed = self.failed + 1
+            else:
+                self.passed = self.passed + 1
+        return
+
+    def printReport(self):
+        print("PASS: {}/{}".format(self.passed, self.testCount))
+        print("FAIL: {}/{}".format(self.failed, self.testCount))
+        return
+
+def main():
+    command  = "./a.out"
+    testFile = "tests.yaml"
+
+    debug = 0
+    try:
+        if sys.argv[1] == "-d":
+            debug = 1
+    except:
+        debug = 0
+
+    t = tester(command, testFile, debug)
+    t.runTests()
+    t.printReport()
+
+if __name__ == "__main__":
+    main()

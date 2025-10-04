@@ -4,3 +4,4 @@
 #
 
 FROM pyjamabrah/sandbox:latest
+ENV PATH="$PATH:/workspaces/sandbox/.devcontainer/"
