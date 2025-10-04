@@ -22,7 +22,10 @@
         ],
         "terminal.integrated.sendKeybindingsToShell": true,
         "extensions.ignoreRecommendations": true,
-        "remote.autoForwardPorts": false
+        "remote.autoForwardPorts": false,
+        "files.exclude": {
+           "**/.devcontainer": true
+        }
       },
       "extensions": [
         "zhwu95.riscv",
