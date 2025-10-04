@@ -27,7 +27,9 @@
            "**/.devcontainer": true,
            "**/README.md": true
         },
-         "workbench.statusBar.visible": false,
+        "workbench.statusBar.visible": false,
+        "workbench.startupEditor": "none",
+        "chat.disableAIFeatures": true
       },
       "extensions": [
         "zhwu95.riscv",
