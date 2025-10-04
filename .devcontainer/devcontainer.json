@@ -24,8 +24,10 @@
         "extensions.ignoreRecommendations": true,
         "remote.autoForwardPorts": false,
         "files.exclude": {
-           "**/.devcontainer": true
-        }
+           "**/.devcontainer": true,
+           "**/README.md": true
+        },
+         "workbench.statusBar.visible": false,
       },
       "extensions": [
         "zhwu95.riscv",
