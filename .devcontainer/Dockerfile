@@ -4,4 +4,4 @@
 #
 
 FROM pyjamabrah/sandbox:latest
-ENV PATH="$PATH:/workspaces/sandbox/.devcontainer/"
+ENV PATH="$PATH:/workspaces/challenges/.devcontainer"
