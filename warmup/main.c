@@ -5,7 +5,7 @@
  *
  * Details
  * -------
- * We want to ensure that you can output "Hello, Wolrld!" on the serial output.
+ * We want to ensure that you can output "Hello, World!" on the serial output.
  * In the section marked as TODO below, write the code that will do this.
  *
  * Running Tests
