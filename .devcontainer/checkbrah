@@ -3,6 +3,7 @@
 import subprocess
 import yaml
 import sys
+from termcolor import colored
 
 class tester():
     def __init__(self, command, testFile, debug):
@@ -47,8 +48,13 @@ class tester():
         return
 
     def printReport(self):
-        print("PASS: {}/{}".format(self.passed, self.testCount))
-        print("FAIL: {}/{}".format(self.failed, self.testCount))
+        print(colored("PASS: {}/{}".format(self.passed, self.testCount), "light_green", attrs=["bold"]))
+        print(colored("FAIL: {}/{}".format(self.failed, self.testCount), "light_red", attrs=["bold"]))
+        print("-------")
+        if self.passed == self.testCount:
+            print(colored("🎯 You Nailed it!! \nMove on to the next challenge...\n", "yellow", attrs=["bold"]))
+        else:
+            print(colored("Oh No!! Some tests failed 🥺\n", "light_red", attrs=["bold"]))
         return
 
 def main():

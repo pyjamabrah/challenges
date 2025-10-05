@@ -40,5 +40,5 @@
 	    ]
     }
   },
-  "postCreateCommand": "pip3 install pygments pyyaml --break-system-packages && wget -P ~ https://git.io/.gdbinit"
+  "postCreateCommand": "pip3 install pygments pyyaml termcolor --break-system-packages && wget -P ~ https://git.io/.gdbinit"
 }
