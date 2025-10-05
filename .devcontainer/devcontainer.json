@@ -28,9 +28,9 @@
            "**/README.md": true,
            "**/.gitignore": true
         },
-        "workbench.statusBar.visible": false,
         "workbench.startupEditor": "none",
-        "chat.disableAIFeatures": true
+        "chat.disableAIFeatures": true,
+        "terminal.integrated.stickyScroll.enabled": false
       },
       "extensions": [
         "zhwu95.riscv",
